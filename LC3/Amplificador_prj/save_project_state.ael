@@ -1,0 +1,7 @@
+{
+    decl winInstP, dsnPtr;
+    api_set_working_cursor();
+    de_open_datadisplay("Amplificador_Adaptado.dds", TRUE);
+    de_open_datadisplay("Adaptacion.dds", TRUE);
+    api_set_normal_cursor();
+}

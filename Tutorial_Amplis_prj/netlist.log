@@ -1,0 +1,28 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no TopDesignName="D:\Designs\RF\Tutorial_Amplis_prj\networks\SA_LCLowpassDT1_DA_LCBandpassDT1_BJT_ft_fmax_vsBias"
+define DA_LCLowpassDT1_DA_LCBandpassDT1_BJT_ft_fmax_vsBias ( _net7  _net51 ) 
+parameters  Fp=1 GHz  Fs=2 GHz  Ap=3 dB  As=20 dB  N=0  ResponseType=1  MinLorC=4  Rg=50 Ohm  Rl=50 Ohm  MaxRealizations=25 
+C:C3  _net51 0 C=7.164907 pF 
+L:L3  _net39 _net51 L=838.665521 nH R=1e-12 Ohm Noise=yes  
+C:C2  _net39 0 C=33.191229 pF 
+L:L2  _net23 _net39 L=1.709026 uH R=1e-12 Ohm Noise=yes  
+C:C1  _net23 0 C=47.805319 pF 
+L:L1  _net7 _net23 L=1.56955 uH R=1e-12 Ohm Noise=yes  
+end DA_LCLowpassDT1_DA_LCBandpassDT1_BJT_ft_fmax_vsBias
+aele Fp=30 MHz;Fs=50 MHz;Ap=2 dB;As=20 dB;N=6;ResponseType=1;MinLorC=3;Rg=100 Ohm;Rl=50 Ohm;MaxRealizations=25;
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no CalcGroupDelay=yes GroupDelayAperture=1e-4 \
+FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=0 Hz Stop=75 MHz Step=800 kHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+Port:Term2  _net16 0 Num=2 Z=50 Ohm Noise=yes 
+Port:Term1  _net10 0 Num=1 Z=100 Ohm Noise=yes 
+DA_LCLowpassDT1_DA_LCBandpassDT1_BJT_ft_fmax_vsBias:DA_LCLowpassDT1  _net10 _net16 Fp=30 MHz Fs=50 MHz Ap=2 dB As=20 dB N=6 ResponseType=1 MinLorC=3 Rg=100 Ohm Rl=50 Ohm MaxRealizations=25 

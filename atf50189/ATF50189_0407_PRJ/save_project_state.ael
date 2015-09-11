@@ -1,0 +1,10 @@
+{
+    decl winInstP, dsnPtr;
+    de_load_design ("Die_Icepak_Final", 0);
+    winInstP = de_create_window(SCHEMATIC_WINDOW, NULL, 364, 117, 846, 500);
+    dsnPtr = de_load_design("Die_Icepak_Final", 0);
+    if (dsnPtr != NULL && winInstP != NULL)
+    {
+        deutil_file_open_update_window(winInstP, dsnPtr, "Die_Icepak_Final");
+    }
+}

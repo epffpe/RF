@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<COMPONENTS>
+  <COMPONENT>
+    <NAME>ap_npn_2N2222A_19930601</NAME>
+    <VENDOR>Motorola</VENDOR>
+    <DESCRIPTION>Manufacturer: Motorola, Basic Description: NPN Transistor, Part number: 2N2222A, Key parameters: Is=2.0457E-14 Bf=265.1655504 Tf=4.2327E-10</DESCRIPTION>
+    <LIBRARY>Analog_Parts_Library</LIBRARY>
+    <PLACEMENT>Both</PLACEMENT>
+    <AVAILABILITY>Available</AVAILABILITY>
+    <URL>N/A</URL>
+    <LICENSE>N/A</LICENSE>
+  </COMPONENT>
+</COMPONENTS>

@@ -1,0 +1,18 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no TopDesignName="D:\Designs\RF\LC3\Amplificador_prj\networks\param_S"
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.5 GHz Stop=1.5 GHz Step=1.0 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#uselib "ckt" , "S2P"
+S2P:SNP1  _net20 _net21 0 File="D:\Designs\RF\LC3\Amplificador_prj\.\data\hxtr2102.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+Port:Term2  _net21 0 Num=2 Z=50 Ohm Noise=yes 
+Port:Term1  _net20 0 Num=1 Z=50 Ohm Noise=yes 
